@@ -1,0 +1,315 @@
+{
+  "entities": {
+    "Gym": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Gym",
+      "type": "object",
+      "description": "Represents a gym or studio listed in the directory.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Gym entity."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the gym or studio."
+        },
+        "city": {
+          "type": "string",
+          "description": "The city where the gym is located."
+        },
+        "category": {
+          "type": "string",
+          "description": "The category of gym (e.g., yoga, CrossFit, general fitness)."
+        },
+        "amenities": {
+          "type": "array",
+          "description": "A list of amenities offered by the gym.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "location": {
+          "type": "string",
+          "description": "Geographic coordinates or address for the gym."
+        },
+        "contactInfo": {
+          "type": "string",
+          "description": "Gym contact information, such as phone number or email address."
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "city",
+        "category",
+        "amenities",
+        "location"
+      ]
+    },
+    "Membership": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Membership",
+      "type": "object",
+      "description": "Represents a membership plan offered by a gym or studio.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Membership entity."
+        },
+        "gymId": {
+          "type": "string",
+          "description": "Reference to Gym. (Relationship: Gym 1:N Membership)"
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the membership plan (e.g., Basic, Premium)."
+        },
+        "price": {
+          "type": "number",
+          "description": "The price of the membership plan."
+        },
+        "duration": {
+          "type": "string",
+          "description": "The duration of the membership (e.g., monthly, yearly)."
+        },
+        "benefits": {
+          "type": "array",
+          "description": "A list of benefits included in the membership plan.",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "gymId",
+        "name",
+        "price",
+        "duration",
+        "benefits"
+      ]
+    },
+    "User": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "User",
+      "type": "object",
+      "description": "Represents a user of the application.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the User entity."
+        },
+        "profilePicture": {
+          "type": "string",
+          "description": "URL to the user's profile picture.",
+          "format": "uri"
+        },
+        "fitnessGoals": {
+          "type": "string",
+          "description": "User's fitness goals."
+        },
+        "preferredGyms": {
+          "type": "array",
+          "description": "References to Gyms. (Relationship: User N:N Gym)",
+          "items": {
+            "type": "string"
+          }
+        },
+        "contactInfo": {
+          "type": "string",
+          "description": "User contact information, such as phone number or email address."
+        }
+      },
+      "required": [
+        "id",
+        "contactInfo"
+      ]
+    },
+    "Booking": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "Booking",
+      "type": "object",
+      "description": "Represents a booking for a class or session.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the Booking entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N Booking)"
+        },
+        "gymId": {
+          "type": "string",
+          "description": "Reference to Gym. (Relationship: Gym 1:N Booking)"
+        },
+        "sessionId": {
+          "type": "string",
+          "description": "Id of the session this booking belongs to"
+        },
+        "bookingDateTime": {
+          "type": "string",
+          "description": "The date and time of the booking.",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the booking (e.g., confirmed, cancelled, completed)."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "gymId",
+        "sessionId",
+        "bookingDateTime",
+        "status"
+      ]
+    },
+    "SupportTicket": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "SupportTicket",
+      "type": "object",
+      "description": "Represents a support ticket submitted by a user.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Unique identifier for the SupportTicket entity."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Reference to User. (Relationship: User 1:N SupportTicket)"
+        },
+        "subject": {
+          "type": "string",
+          "description": "The subject of the support ticket."
+        },
+        "message": {
+          "type": "string",
+          "description": "The message body of the support ticket."
+        },
+        "submissionDateTime": {
+          "type": "string",
+          "description": "The date and time the ticket was submitted.",
+          "format": "date-time"
+        },
+        "status": {
+          "type": "string",
+          "description": "The status of the support ticket (e.g., open, in progress, closed)."
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "subject",
+        "message",
+        "submissionDateTime",
+        "status"
+      ]
+    }
+  },
+  "auth": {
+    "providers": [
+      "password",
+      "anonymous"
+    ]
+  },
+  "firestore": {
+    "structure": [
+      {
+        "path": "/gyms/{gymId}",
+        "definition": {
+          "entityName": "Gym",
+          "schema": {
+            "$ref": "#/backend/entities/Gym"
+          },
+          "description": "Stores gym information. Gym documents are publicly readable. {gymId} is the unique ID of the gym.",
+          "params": [
+            {
+              "name": "gymId",
+              "description": "The unique identifier for the gym."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/gyms/{gymId}/memberships/{membershipId}",
+        "definition": {
+          "entityName": "Membership",
+          "schema": {
+            "$ref": "#/backend/entities/Membership"
+          },
+          "description": "Stores membership information for a specific gym. {gymId} is the gym's ID, and {membershipId} is the unique ID of the membership.",
+          "params": [
+            {
+              "name": "gymId",
+              "description": "The unique identifier for the gym."
+            },
+            {
+              "name": "membershipId",
+              "description": "The unique identifier for the membership."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}",
+        "definition": {
+          "entityName": "User",
+          "schema": {
+            "$ref": "#/backend/entities/User"
+          },
+          "description": "Stores user profile information. {userId} corresponds to the Firebase Auth UID.  This path establishes ownership.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique Firebase Auth UID of the user."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/bookings/{bookingId}",
+        "definition": {
+          "entityName": "Booking",
+          "schema": {
+            "$ref": "#/backend/entities/Booking"
+          },
+          "description": "Stores booking information for a specific user. {userId} is the user's ID, and {bookingId} is the unique ID of the booking. This path establishes ownership.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique Firebase Auth UID of the user."
+            },
+            {
+              "name": "bookingId",
+              "description": "The unique identifier for the booking."
+            }
+          ]
+        }
+      },
+      {
+        "path": "/users/{userId}/supportTickets/{ticketId}",
+        "definition": {
+          "entityName": "SupportTicket",
+          "schema": {
+            "$ref": "#/backend/entities/SupportTicket"
+          },
+          "description": "Stores support tickets submitted by a user. {userId} is the user's ID, and {ticketId} is the unique ID of the ticket. This path establishes ownership.",
+          "params": [
+            {
+              "name": "userId",
+              "description": "The unique Firebase Auth UID of the user."
+            },
+            {
+              "name": "ticketId",
+              "description": "The unique identifier for the support ticket."
+            }
+          ]
+        }
+      }
+    ],
+    "reasoning": "The Firestore data structure is designed to ensure authorization independence, clarity, and scalability for the FitKit 2025 application. It addresses the error \"FirebaseError: Firebase: Error (auth/operation-not-allowed)\" by using path-based ownership and explicit role definitions, avoiding complex hierarchical `get()` calls in security rules.  Authorization Independence is achieved through path-based ownership for User data, avoiding the need to check parent document data. Gym memberships are managed within the Gym documents themselves, allowing atomic operations without extra reads. The structure also supports QAPs. By segregating data based on ownership (e.g., `/users/{userId}/bookings`) or by using membership maps, listing operations can be secured without filtering.\n\nSpecifically:\n\n*   **User Data:** User profiles and bookings are stored under `/users/{userId}`. This path-based ownership allows straightforward security rules based on `request.auth.uid == userId`. This eliminates the need to read other documents to determine access.\n*   **Gyms and Memberships:** Gyms are stored in the `/gyms` collection, and memberships are stored as a subcollection `/gyms/{gymId}/memberships`. This allows easy querying and management of gym information and memberships.\n*   **Bookings:** Bookings are stored under the user's document in `/users/{userId}/bookings`. This establishes clear ownership and simplifies security rules. The `gymId` is included to allow queries for bookings at specific gyms, if needed.\n*   **Support Tickets:** Support tickets are stored under the user's document in `/users/{userId}/supportTickets`. This provides ownership and simplifies security rules.\n\nThis design avoids hierarchical authorization dependencies by relying on path-based ownership and direct storage of authorization data, which enables atomic operations and simplifies debugging."
+  }
+}

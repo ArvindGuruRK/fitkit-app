@@ -1,0 +1,82 @@
+{
+  "placeholderImages": [
+    {
+      "id": "main-logo",
+      "description": "FitKit 2025 Logo",
+      "imageUrl": "https://i.ibb.co/HTG7crwx/FITKITS-LOGO-01-600x600.jpg",
+      "imageHint": "company logo"
+    },
+    {
+      "id": "hero-image",
+      "description": "A woman working out in a gym.",
+      "imageUrl": "https://i.ibb.co/SwFvtBHy/IMG-9747.jpg",
+      "imageHint": "gym workout"
+    },
+    {
+      "id": "gym-1",
+      "description": "Interior of a spacious gym with equipment.",
+      "imageUrl": "https://images.unsplash.com/photo-1597076537061-a6b58163aa45?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxneW0lMjBpbnRlcmlvcnxlbnwwfHx8fDE3NjEyOTU2MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "gym interior"
+    },
+    {
+      "id": "gym-2",
+      "description": "A yoga studio with mats laid out.",
+      "imageUrl": "https://images.unsplash.com/photo-1552196527-bffef41ef674?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8eW9nYSUyMHN0dWRpb3xlbnwwfHx8fDE3NjEyNDA3MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "yoga studio"
+    },
+    {
+      "id": "gym-3",
+      "description": "A crossfit gym with weights and ropes.",
+      "imageUrl": "https://images.unsplash.com/photo-1632758243488-7e6f9173cfa1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjcm9zc2ZpdCUyMGd5bXxlbnwwfHx8fDE3NjEyOTU2MDF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "crossfit gym"
+    },
+    {
+      "id": "gym-4",
+      "description": "People in a spinning class.",
+      "imageUrl": "https://images.unsplash.com/photo-1517130038641-a774d04afb3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxzcGluJTIwY2xhc3N8ZW58MHx8fHwxNzYxMjk1NjAxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "spin class"
+    },
+    {
+      "id": "gym-5",
+      "description": "A person lifting weights.",
+      "imageUrl": "https://images.unsplash.com/photo-1662045010188-b5e91a7f504b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHx3ZWlnaHQlMjBsaWZ0aW5nfGVufDB8fHx8MTc2MTIyMTQ2NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "weight lifting"
+    },
+    {
+      "id": "gym-6",
+      "description": "A swimming pool in a fitness center.",
+      "imageUrl": "https://images.unsplash.com/photo-1557459325-b6733cbeae9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c3dpbW1pbmclMjBwb29sfGVufDB8fHx8MTc2MTIyNDI4NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "swimming pool"
+    },
+    {
+      "id": "gym-7",
+      "description": "A serene yoga studio for restorative classes.",
+      "imageUrl": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjAzNTV8MHwxfHNlYXJjaHwxfHx5b2dhJTIwcG9zZXxlbnwwfHx8fDE3MTI5ODMyODh8MA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "restorative yoga"
+    },
+    {
+      "id": "gym-8",
+      "description": "People doing pilates.",
+      "imageUrl": "https://images.unsplash.com/photo-1518611012118-696072aa579a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjAzNTV8MHwxfHNlYXJjaHwzfHxwaWxhdGVzfGVufDB8fHx8MTcxMjk4MzMxN3ww&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "pilates class"
+    },
+    {
+      "id": "gym-9",
+      "description": "A high-energy dance cardio class.",
+      "imageUrl": "https://images.unsplash.com/photo-1524594152303-9fdc36b23e44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjAzNTV8MHwxfHNlYXJjaHw1fHxkYW5jZSUyMGZpdG5lc3N8ZW58MHx8fHwxNzEyOTgzMzQ5fDA&ixlib=rb-4.0.3&q=80&w=1080",
+      "imageHint": "dance cardio"
+    },
+    {
+      "id": "user-avatar",
+      "description": "A generic user avatar.",
+      "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyMjc5NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    },
+    {
+      "id": "user-avatar-2",
+      "description": "Another generic user avatar.",
+      "imageUrl": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NjEyMjc5NjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "person portrait"
+    }
+  ]
+}

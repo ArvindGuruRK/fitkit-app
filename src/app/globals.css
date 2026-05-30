@@ -103,8 +103,10 @@ body {
 
   .animate-marquee {
     animation: marquee 40s linear infinite;
+    will-change: transform;
   }
   .animate-marquee-2 {
     animation: marquee-2 40s linear infinite;
+    will-change: transform;
   }
 }

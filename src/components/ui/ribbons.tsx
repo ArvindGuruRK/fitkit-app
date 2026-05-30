@@ -38,7 +38,8 @@ const Ribbons: React.FC<RibbonsProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
-    const renderer = new Renderer({ dpr: window.devicePixelRatio || 2, alpha: true });
+    // Cap DPR at 1 — this is a decorative background, no need for full Retina resolution
+    const renderer = new Renderer({ dpr: Math.min(window.devicePixelRatio || 1, 1), alpha: true });
     const gl = renderer.gl;
     if (Array.isArray(backgroundColor) && backgroundColor.length === 4) {
       gl.clearColor(backgroundColor[0], backgroundColor[1], backgroundColor[2], backgroundColor[3]);
@@ -123,12 +124,16 @@ const Ribbons: React.FC<RibbonsProps> = ({
       }
     `;
 
+    let resizeTimer: ReturnType<typeof setTimeout>;
     function resize() {
-      if (!container) return;
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-      renderer.setSize(width, height);
-      lines.forEach(line => line.polyline.resize());
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (!container) return;
+        const width = container.clientWidth;
+        const height = container.clientHeight;
+        renderer.setSize(width, height);
+        lines.forEach(line => line.polyline.resize());
+      }, 150);
     }
     window.addEventListener('resize', resize);
 
@@ -205,11 +210,13 @@ const Ribbons: React.FC<RibbonsProps> = ({
     const tmp = new Vec3();
     let frameId: number;
     let lastTime = performance.now();
-    function update() {
+    const TARGET_FRAME_MS = 1000 / 30; // 30fps cap — background decoration doesn't need 60fps
+    function update(time: number) {
       frameId = requestAnimationFrame(update);
       const currentTime = performance.now();
       const dt = currentTime - lastTime;
-      lastTime = currentTime;
+      if (dt < TARGET_FRAME_MS) return; // skip frame to hold 30fps
+      lastTime = currentTime - (dt % TARGET_FRAME_MS);
 
       lines.forEach(line => {
         tmp.copy(mouse).add(line.mouseOffset).sub(line.points[0]).multiply(line.spring);
@@ -233,10 +240,11 @@ const Ribbons: React.FC<RibbonsProps> = ({
 
       renderer.render({ scene });
     }
-    update();
+    update(0);
 
     return () => {
       window.removeEventListener('resize', resize);
+      clearTimeout(resizeTimer);
       container.removeEventListener('mousemove', updateMouse);
       container.removeEventListener('touchstart', updateMouse);
       container.removeEventListener('touchmove', updateMouse);

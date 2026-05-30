@@ -82,7 +82,11 @@ const PillNav = ({
 
     layout();
 
-    const onResize = () => layout();
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    const onResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(layout, 100);
+    };
     window.addEventListener('resize', onResize);
 
     if (document.fonts?.ready) {
@@ -117,7 +121,10 @@ const PillNav = ({
       }
     }
 
-    return () => window.removeEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('resize', onResize);
+      clearTimeout(resizeTimer);
+    };
   }, [items, ease, initialLoadAnimation]);
 
   const handleEnter = i => {

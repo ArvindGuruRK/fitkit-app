@@ -36,7 +36,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-background/80 backdrop-blur-sm border-b sticky top-0 z-50">
+    <header className="w-full bg-background/80 backdrop-blur-sm border-b sticky top-0 z-50 will-change-transform">
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         <div className="flex items-center gap-6">
           <Link href="/" className="flex items-center gap-2">

@@ -28,7 +28,6 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   const textPathRef = useRef<SVGTextPathElement | null>(null);
   const pathRef = useRef<SVGPathElement | null>(null);
   const [spacing, setSpacing] = useState(0);
-  const [offset, setOffset] = useState(0);
   const uid = useId();
   const pathId = `curve-${uid}`;
   const pathD = `M-100,40 Q500,${40 + curveAmount} 1540,40`;
@@ -51,12 +50,9 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
   }, [text, className]);
 
   useEffect(() => {
-    if (!spacing) return;
-    if (textPathRef.current) {
-      const initial = -spacing;
-      textPathRef.current.setAttribute('startOffset', initial + 'px');
-      setOffset(initial);
-    }
+    if (!spacing || !textPathRef.current) return;
+    const initial = -spacing;
+    textPathRef.current.setAttribute('startOffset', initial + 'px');
   }, [spacing]);
 
   useEffect(() => {
@@ -70,8 +66,8 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
         const wrapPoint = spacing;
         if (newOffset <= -wrapPoint) newOffset += wrapPoint;
         if (newOffset > 0) newOffset -= wrapPoint;
+        // Direct DOM mutation \u2014 no React state update to avoid 60fps re-renders
         textPathRef.current.setAttribute('startOffset', newOffset + 'px');
-        setOffset(newOffset);
       }
       frame = requestAnimationFrame(step);
     };
@@ -97,8 +93,8 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
     const wrapPoint = spacing;
     if (newOffset <= -wrapPoint) newOffset += wrapPoint;
     if (newOffset > 0) newOffset -= wrapPoint;
+    // Direct DOM mutation \u2014 no React state update
     textPathRef.current.setAttribute('startOffset', newOffset + 'px');
-    setOffset(newOffset);
   };
 
   const endDrag = () => {
@@ -130,7 +126,7 @@ const CurvedLoop: FC<CurvedLoopProps> = ({
         </defs>
         {ready && (
           <text xmlSpace="preserve" className={`fill-foreground ${className ?? ''}`}>
-            <textPath ref={textPathRef} href={`#${pathId}`} startOffset={offset + 'px'} xmlSpace="preserve">
+            <textPath ref={textPathRef} href={`#${pathId}`} startOffset="0px" xmlSpace="preserve">
               {totalText}
             </textPath>
           </text>

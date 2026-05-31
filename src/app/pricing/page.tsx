@@ -54,7 +54,7 @@ export default function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold font-headline text-accent-foreground">Membership Plans</h1>
+        <h1 className="text-4xl font-bold font-headline text-black">Membership Plans</h1>
         <p className="mt-2 text-lg text-muted-foreground">
           Choose the plan that's right for you.
         </p>

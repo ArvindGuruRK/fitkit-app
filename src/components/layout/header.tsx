@@ -16,6 +16,8 @@ const navLinks = [
   { href: '/classes', label: 'Classes' },
   { href: '/shop', label: 'Shop' },
   { href: '/community', label: 'Community' },
+  { href: '/events', label: 'Events' },
+  { href: '/fitbox', label: 'FitBox' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/contact', label: 'Contact' },
 ];

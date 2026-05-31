@@ -15,7 +15,7 @@ import {
   SidebarFooter,
 } from '@/components/ui/sidebar';
 import { Icons } from '@/components/icons';
-import { LayoutDashboard, UserCircle, LogOut } from 'lucide-react';
+import { LayoutDashboard, UserCircle, LogOut, Ticket, BookOpen } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -23,6 +23,8 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 const menuItems = [
   { href: '/dashboard', label: 'Dashboard', icon: <LayoutDashboard /> },
   { href: '/dashboard/profile', label: 'Profile', icon: <UserCircle /> },
+  { href: '/dashboard/tickets', label: 'My Tickets', icon: <Ticket /> },
+  { href: '/fitbox', label: 'My Learning', icon: <BookOpen /> },
 ];
 
 const logoImage = PlaceHolderImages.find(p => p.id === 'main-logo');

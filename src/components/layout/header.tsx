@@ -8,10 +8,13 @@ import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { CartIconButton } from '@/components/shop/cart-icon-button';
+import { CartDrawer } from '@/components/shop/cart-drawer';
 
 const navLinks = [
   { href: '/', label: 'Home' },
   { href: '/classes', label: 'Classes' },
+  { href: '/shop', label: 'Shop' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -63,7 +66,8 @@ export function Header() {
         </nav>
        
         <div className="hidden md:flex items-center gap-2">
-           <AuthSection />
+          <CartIconButton />
+          <AuthSection />
         </div>
 
         <div className="md:hidden">
@@ -73,6 +77,8 @@ export function Header() {
           </Button>
         </div>
       </div>
+
+      <CartDrawer />
 
       {/* Mobile Menu */}
       <div
@@ -121,6 +127,9 @@ export function Header() {
               </ul>
             </nav>
             <div className="border-t pt-4 mt-2 flex flex-col gap-2">
+                <div className="flex justify-start pb-2">
+                  <CartIconButton />
+                </div>
                 <Button variant="outline" asChild size="lg" onClick={() => setIsMenuOpen(false)}>
                   <Link href="/login">Log In</Link>
                 </Button>

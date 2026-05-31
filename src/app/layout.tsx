@@ -6,6 +6,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { AnnouncementBanner } from '@/components/announcement-banner';
 import Ribbons from '@/components/ui/ribbons';
 import { Header } from '@/components/layout/header';
+import { CartProvider } from '@/components/shop/cart-provider';
 import { Michroma, Roboto } from 'next/font/google';
 
 const michroma = Michroma({
@@ -41,11 +42,13 @@ export default function RootLayout({
               baseThickness={20}
             />
         </div>
-          <AnnouncementBanner />
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <Toaster />
+          <CartProvider>
+            <AnnouncementBanner />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <Toaster />
+          </CartProvider>
       </body>
     </html>
   );

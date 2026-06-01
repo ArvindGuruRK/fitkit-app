@@ -8,7 +8,6 @@ import Ribbons from '@/components/ui/ribbons';
 import { Header } from '@/components/layout/header';
 import { CartProvider } from '@/components/shop/cart-provider';
 import { ChatbotWidget } from '@/components/chatbot';
-import { PageTransitionProvider } from '@/components/layout/transition-provider';
 import { Michroma, Roboto } from 'next/font/google';
 
 const michroma = Michroma({
@@ -47,9 +46,7 @@ export default function RootLayout({
           <CartProvider>
             <AnnouncementBanner />
             <Header />
-            <PageTransitionProvider>
-              <main>{children}</main>
-            </PageTransitionProvider>
+            <main>{children}</main>
             <Footer />
             <Toaster />
             <ChatbotWidget />

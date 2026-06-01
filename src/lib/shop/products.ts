@@ -11,8 +11,7 @@ export const products: Product[] = [
     shortDescription: 'The world\'s best-selling whey protein powder. 24g of protein per serving.',
     description: 'Optimum Nutrition\'s Gold Standard 100% Whey uses pure whey protein isolates as the primary ingredient. Each serving delivers 24g of protein, 5.5g of BCAAs, and only 1–3g of fat. Ideal for post-workout recovery and lean muscle building.',
     images: [
-      'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=800',
-      'https://images.unsplash.com/photo-1584735935682-2f2b69dff9d2?w=800',
+      '/images/products/gold-standard-whey.png',
     ],
     price: 3499,
     originalPrice: 4199,
@@ -51,8 +50,7 @@ export const products: Product[] = [
     shortDescription: 'Enhanced absorption with BioZyme technology. 25g protein per serving.',
     description: 'MuscleBlaze Biozyme uses patented enzyme technology for up to 50% better absorption than regular whey. With 25g of whey protein and added digestive enzymes, it\'s perfect for athletes who want maximum results from every scoop.',
     images: [
-      'https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=800',
-      'https://images.unsplash.com/photo-1546483875-ad9014c88eba?w=800',
+      '/images/products/biozyme-performance-whey.png',
     ],
     price: 2799,
     originalPrice: 3299,
@@ -87,7 +85,7 @@ export const products: Product[] = [
     shortDescription: 'Ultra-pure hydrolyzed isolate. 25g protein, 0g sugar per serving.',
     description: 'Dymatize ISO100 is made from 100% whey protein isolate and hydrolyzed whey. With 25g of protein and virtually zero fat, sugar, or lactose per serving, it\'s the cleanest protein for serious athletes and those with lactose sensitivity.',
     images: [
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800',
+      '/images/products/iso100-hydrolyzed-whey.png',
     ],
     price: 4299,
     rating: 4.7,
@@ -123,7 +121,7 @@ export const products: Product[] = [
     shortDescription: 'Pure micronized creatine for strength, power, and muscle volume.',
     description: 'Optimum Nutrition\'s Micronized Creatine Monohydrate is the most researched form of creatine. It mixes easily, is unflavored, and can be added to any drink or protein shake. 3g of pure creatine per serving to fuel your high-intensity workouts.',
     images: [
-      'https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=800',
+      '/images/products/micronized-creatine.png',
     ],
     price: 1299,
     originalPrice: 1599,
@@ -159,7 +157,7 @@ export const products: Product[] = [
     shortDescription: 'More soluble form of creatine. No loading phase, no bloating.',
     description: 'MuscleBlaze Creatine HCL is bonded to hydrochloric acid for greater solubility and bioavailability. Requires a smaller dose than monohydrate, absorbs faster, and produces no water retention or bloating. Ideal for those sensitive to creatine monohydrate.',
     images: [
-      'https://images.unsplash.com/photo-1632933080809-a12a7bfc8082?w=800',
+      '/images/products/creatine-hcl.png',
     ],
     price: 1499,
     rating: 4.5,
@@ -189,8 +187,7 @@ export const products: Product[] = [
     shortDescription: '1250 calories, 50g protein per serving. The ultimate mass builder.',
     description: 'Optimum Nutrition\'s Serious Mass is the ultimate weight gain formula. With over 1250 calories per serving, 50g of blended protein, 250g of carbohydrates, and 25 vitamins and minerals, it\'s engineered for those looking to add serious size. Mix with water, milk, or blend with your favorite ingredients.',
     images: [
-      'https://images.unsplash.com/photo-1590750177948-bae3c3fc5b2f?w=800',
-      'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800',
+      '/images/products/serious-mass-gainer.png',
     ],
     price: 3999,
     originalPrice: 4799,
@@ -227,7 +224,7 @@ export const products: Product[] = [
     shortDescription: 'Enriched with 30g protein and digestive enzymes for mass building.',
     description: 'MuscleBlaze Super Gainer XXL is a scientifically formulated weight gainer enriched with complex carbohydrates, 30g of blended protein, and digestive enzymes for better nutrient absorption. Ideal for hard gainers looking to pack on quality muscle mass.',
     images: [
-      'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800',
+      '/images/products/super-gainer-xxl.png',
     ],
     price: 2499,
     originalPrice: 2999,
@@ -260,7 +257,7 @@ export const products: Product[] = [
     shortDescription: 'Energy + amino acids. Pre-workout, intra-workout, or anytime.',
     description: 'Optimum Nutrition\'s Essential Amino Energy combines essential amino acids (EAAs) with a natural energy blend. Use it as a pre-workout for focus and energy, during training to support muscle endurance, or as an afternoon pick-me-up. 5g of amino acids per serving with 100mg of caffeine from natural sources.',
     images: [
-      'https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=800',
+      '/images/products/essential-amino-energy.png',
     ],
     price: 1899,
     originalPrice: 2299,
@@ -294,7 +291,7 @@ export const products: Product[] = [
     shortDescription: 'Convenient ready-to-drink 25g protein shake. No prep needed.',
     description: 'Myprotein\'s Impact Whey Protein Shake is a convenient ready-to-drink option delivering 25g of high-quality whey protein. Perfect for on-the-go nutrition after the gym or as a healthy snack. Low in fat and sugar, available in a range of delicious flavors.',
     images: [
-      'https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?w=800',
+      '/images/products/impact-whey-shake.png',
     ],
     price: 299,
     rating: 4.3,
@@ -325,7 +322,7 @@ export const products: Product[] = [
     shortDescription: '100% vegan protein blend. 24g protein from pea, brown rice & hemp.',
     description: 'Nakpro Plant Protein is a premium vegan protein powder made from a blend of pea protein, brown rice protein, and hemp seed protein. With 24g of complete protein per serving and a rich chocolate flavor, it\'s perfect for vegans and those with dairy intolerances.',
     images: [
-      'https://images.unsplash.com/photo-1622597467836-f3e6956c474b?w=800',
+      '/images/products/nakpro-plant-protein.png',
     ],
     price: 2199,
     originalPrice: 2599,
@@ -359,8 +356,7 @@ export const products: Product[] = [
     shortDescription: 'BPA-free 700ml shaker with leak-proof lid and mixing ball.',
     description: 'The FitKits Pro Shaker Bottle is built for athletes who demand performance from every piece of equipment. Made from BPA-free Tritan plastic, it features a leak-proof screw cap, a stainless steel mixing ball for lump-free protein shakes, and a wide mouth for easy cleaning. Dishwasher safe.',
     images: [
-      'https://images.unsplash.com/photo-1523362628745-0c100150b504?w=800',
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800',
+      '/images/products/fitkits-shaker-bottle-pro.png',
     ],
     price: 499,
     originalPrice: 699,
@@ -390,7 +386,7 @@ export const products: Product[] = [
     shortDescription: 'Anti-slip padded gloves for heavy lifts. Full wrist support.',
     description: 'FitKits Gym Training Gloves protect your palms during heavy lifting while providing full wrist support with the integrated wrist wrap. The anti-slip grip pattern and breathable mesh backing keep your hands comfortable and dry throughout your workout.',
     images: [
-      'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800',
+      '/images/products/fitkits-gym-gloves.png',
     ],
     price: 699,
     originalPrice: 899,
@@ -416,7 +412,7 @@ export const products: Product[] = [
     shortDescription: '5 resistance levels from 10–50 lbs. Perfect for home or travel.',
     description: 'The FitKits Resistance Bands Set includes 5 latex bands with resistance levels ranging from 10 to 50 lbs. Use them for warm-ups, stretching, strength training, physical therapy, or on-the-go workouts. Includes a carry bag for easy storage.',
     images: [
-      'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800',
+      '/images/products/resistance-bands-set.png',
     ],
     price: 899,
     rating: 4.5,
@@ -436,7 +432,7 @@ export const products: Product[] = [
     shortDescription: 'Double-wall vacuum insulation. Keeps cold 24h, hot 12h.',
     description: 'The FitKits Insulated Steel Bottle is crafted from 18/8 food-grade stainless steel with double-wall vacuum insulation. It keeps your drinks cold for up to 24 hours and hot for up to 12 hours. Wide mouth design, BPA-free, and sweat-free exterior.',
     images: [
-      'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800',
+      '/images/products/fitkits-insulated-steel-bottle.png',
     ],
     price: 999,
     originalPrice: 1299,
@@ -467,8 +463,7 @@ export const products: Product[] = [
     shortDescription: 'Moisture-wicking athletic fit tee. Breathable polyester blend.',
     description: 'The FitKits Performance T-Shirt is made from a lightweight polyester-spandex blend engineered for peak performance. The moisture-wicking fabric pulls sweat away from your skin, while the athletic fit allows full range of motion. Available in multiple colors with the iconic FitKits logo.',
     images: [
-      'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800',
-      'https://images.unsplash.com/photo-1562157873-818bc0726f68?w=800',
+      '/images/products/fitkits-performance-t-shirt.png',
     ],
     price: 799,
     originalPrice: 999,
@@ -495,7 +490,7 @@ export const products: Product[] = [
     shortDescription: '45L capacity duffel with wet compartment and shoe pocket.',
     description: 'The FitKits Pro Gym Duffel Bag is your ultimate gym companion. With 45L of capacity, a separate wet/dry compartment for sweaty gear, a ventilated shoe pocket, multiple interior pockets for organization, and padded shoulder straps — it has everything you need for a complete workout session.',
     images: [
-      'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800',
+      '/images/products/fitkits-gym-bag.png',
     ],
     price: 1999,
     originalPrice: 2499,
@@ -522,7 +517,7 @@ export const products: Product[] = [
     shortDescription: 'High-compression support for quads and hamstrings. Anti-chafe.',
     description: 'FitKits Compression Shorts are designed to reduce muscle fatigue and support faster recovery. The high-compression fabric supports your quads, hamstrings, and glutes during high-intensity activities. Anti-chafe flat-lock seams and a 4-way stretch fabric provide maximum comfort.',
     images: [
-      'https://images.unsplash.com/photo-1539710429820-4eed8c3a1f88?w=800',
+      '/images/products/fitkits-compression-shorts.png',
     ],
     price: 1199,
     rating: 4.3,
@@ -601,7 +596,7 @@ export const products: Product[] = [
     shortDescription: '8g BCAAs in a 2:1:1 ratio. Supports muscle recovery and endurance.',
     description: 'Optimum Nutrition Pro BCAA delivers 8g of BCAAs in the optimal 2:1:1 ratio (leucine:isoleucine:valine) along with 5g of glutamine per serving. Sip it during training to reduce muscle breakdown and accelerate post-workout recovery. Zero fat, zero sugar, and available in refreshing fruit flavors.',
     images: [
-      'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800',
+      'https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=800',
     ],
     price: 2099,
     originalPrice: 2499,

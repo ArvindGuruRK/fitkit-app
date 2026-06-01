@@ -10,8 +10,8 @@ import { Check } from 'lucide-react';
 const pricingTiers = [
   {
     name: 'Starter',
-    monthlyPrice: 29,
-    yearlyPrice: 290,
+    monthlyPrice: 1499,
+    yearlyPrice: 14990,
     description: 'For individuals just starting their fitness journey.',
     features: [
       '4 classes per month',
@@ -22,8 +22,8 @@ const pricingTiers = [
   },
   {
     name: 'Pro',
-    monthlyPrice: 59,
-    yearlyPrice: 590,
+    monthlyPrice: 2999,
+    yearlyPrice: 29990,
     description: 'For fitness enthusiasts who want more flexibility.',
     features: [
       '10 classes per month',
@@ -35,8 +35,8 @@ const pricingTiers = [
   },
   {
     name: 'Unlimited',
-    monthlyPrice: 99,
-    yearlyPrice: 990,
+    monthlyPrice: 4999,
+    yearlyPrice: 49990,
     description: 'For the dedicated athlete who wants it all.',
     features: [
       'Unlimited classes',
@@ -54,7 +54,7 @@ export default function PricingPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-16">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold font-headline text-black">Membership Plans</h1>
+        <h1 className="text-4xl font-bold font-headline text-foreground">Membership Plans</h1>
         <p className="mt-2 text-lg text-muted-foreground">
           Choose the plan that's right for you.
         </p>
@@ -93,8 +93,19 @@ export default function PricingPage() {
             </CardHeader>
             <CardContent className="flex-grow">
               <div className="text-center mb-6">
-                <span className="text-4xl font-bold">${isYearly ? tier.yearlyPrice / 12 : tier.monthlyPrice}</span>
+                <span className="text-4xl font-bold">
+                  ₹{isYearly ? Math.round(tier.yearlyPrice / 12).toLocaleString('en-IN') : tier.monthlyPrice.toLocaleString('en-IN')}
+                </span>
                 <span className="text-muted-foreground">/month</span>
+                {isYearly ? (
+                  <p className="text-xs text-green-600 dark:text-green-400 font-medium mt-2">
+                    Billed annually (₹{tier.yearlyPrice.toLocaleString('en-IN')}/year)
+                  </p>
+                ) : (
+                  <p className="text-xs text-muted-foreground mt-2">
+                    Billed monthly
+                  </p>
+                )}
               </div>
               <ul className="space-y-3">
                 {tier.features.map((feature, index) => (
